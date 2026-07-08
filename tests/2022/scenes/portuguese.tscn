@@ -27,13 +27,10 @@ script = ExtResource("1_7xr03")
 questions = ExtResource("2_pfo3a")
 
 [node name="Button" type="Button" parent="." unique_id=1166120040]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -55.0
+layout_mode = 0
+offset_left = 746.0
+offset_right = 801.0
 offset_bottom = 31.0
-grow_horizontal = 0
 text = "Check"
 
 [node name="checkmark_uncheck" type="TextureRect" parent="." unique_id=1075859556]
