@@ -23,7 +23,7 @@ func _ready():
 	add_child(check_child)
 	columns = 3
 
-func _on_item_selected():
+func _on_item_selected(_idx = 0):
 	question.selected = option_child.selected as QuestionList.OPTIONS
 
 func check():
