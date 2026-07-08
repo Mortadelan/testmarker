@@ -5,6 +5,4 @@ extends Resource
 @export var correct : QuestionList.OPTIONS
 
 func is_correct() -> bool:
-	if selected == correct:
-		return true
-	return false
+	return selected == correct
