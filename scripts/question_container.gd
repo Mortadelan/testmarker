@@ -12,3 +12,6 @@ func _ready():
 func _on_button_pressed():
 	for child in get_children():
 		child.check()
+
+func _on_h_slider_value_changed(value: float) -> void:
+	self.columns = int(value)

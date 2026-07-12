@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cohgqco501e4x"]
 
 [ext_resource type="Script" uid="uid://b567kmtre3slb" path="res://scripts/question_container.gd" id="1_7xr03"]
-[ext_resource type="Resource" uid="uid://dsvh3xbfra55w" path="res://tests/2022/resources/portuguese.tres" id="2_pfo3a"]
+[ext_resource type="Resource" uid="uid://dsvh3xbfra55w" path="res://tests/UFRGS 2022/resources/portuguese.tres" id="2_pfo3a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
 font_size = 21
@@ -18,7 +18,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.25
 anchor_bottom = 0.25
-columns = 5
+columns = 2
 script = ExtResource("1_7xr03")
 questions = ExtResource("2_pfo3a")
 
@@ -32,4 +32,21 @@ offset_bottom = 5.0
 grow_horizontal = 0
 text = "Check"
 
+[node name="HSlider" type="HSlider" parent="." unique_id=558512005]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 26.0
+grow_horizontal = 2
+min_value = 1.0
+max_value = 5.0
+value = 2.0
+tick_count = 5
+ticks_on_borders = true
+
 [connection signal="pressed" from="Button" to="question_container" method="_on_button_pressed"]
+[connection signal="value_changed" from="HSlider" to="question_container" method="_on_h_slider_value_changed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ou0xhvee7psu"]
 
-[ext_resource type="PackedScene" uid="uid://cohgqco501e4x" path="res://tests/2022/scenes/portuguese.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cohgqco501e4x" path="res://tests/UFRGS 2022/scenes/portuguese.tscn" id="1_ig7tw"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 
