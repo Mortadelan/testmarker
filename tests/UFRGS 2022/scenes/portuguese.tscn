@@ -22,11 +22,12 @@ columns = 2
 script = ExtResource("1_7xr03")
 questions = ExtResource("2_pfo3a")
 
-[node name="Button" type="Button" parent="." unique_id=2033859178]
+[node name="check_button" type="Button" parent="." unique_id=2033859178]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = 6170.0
 offset_top = 5.0
 offset_bottom = 5.0
 grow_horizontal = 0
@@ -48,5 +49,5 @@ value = 2.0
 tick_count = 5
 ticks_on_borders = true
 
-[connection signal="pressed" from="Button" to="question_container" method="_on_button_pressed"]
+[connection signal="pressed" from="check_button" to="question_container" method="_on_check_button_pressed"]
 [connection signal="value_changed" from="HSlider" to="question_container" method="_on_h_slider_value_changed"]
