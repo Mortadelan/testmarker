@@ -3,8 +3,8 @@ extends Resource
 
 @export var selected : QuestionList.OPTIONS
 @export var correct : QuestionList.OPTIONS
-@export var easiness_index : float
-@export var discrimination_index : float
+@export var ease : float
+@export var discrim : float
 
 func is_correct() -> bool:
 	return selected == correct

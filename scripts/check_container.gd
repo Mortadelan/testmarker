@@ -55,4 +55,3 @@ func set_uncheck():
 	correct.set_visible(false)
 	uncheck.set_visbile(true)
 	wrong.set_visible(false)
-

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://ou0xhvee7psu"]
 
 [ext_resource type="PackedScene" uid="uid://cohgqco501e4x" path="res://tests/UFRGS 2022/scenes/portuguese.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://cy1vg20qgd6eq" path="res://tests/test_maker.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cy1vg20qgd6eq" path="res://tests/testmaker/test_maker.tscn" id="2_0xm2m"]
+[ext_resource type="LabelSettings" uid="uid://1llxhgpr8anr" path="res://scripts/label_settings.tres" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://beedeqbw5l3m1" path="res://scripts/test_container.gd" id="3_h2yge"]
 
 [sub_resource type="Theme" id="Theme_7dm0k"]
 
@@ -61,6 +63,14 @@ size_flags_vertical = 3
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_vertical = 1
+label_settings = ExtResource("3_1bvp3")
 
 [node name="TestMaker" parent="ScrollContainer/BoxContainer" unique_id=976876249 instance=ExtResource("2_0xm2m")]
 layout_mode = 2
+label_settings = ExtResource("3_1bvp3")
+
+[node name="TestContainer" type="Label" parent="ScrollContainer/BoxContainer" unique_id=2040929819]
+layout_mode = 2
+label_settings = ExtResource("3_1bvp3")
+script = ExtResource("3_h2yge")
+metadata/_custom_type_script = "uid://beedeqbw5l3m1"
