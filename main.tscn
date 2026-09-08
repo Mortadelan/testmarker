@@ -29,11 +29,13 @@ color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 custom_maximum_size = Vector2(-1, 20)
 propagate_maximum_size = true
 clip_contents = true
-layout_mode = 0
-offset_right = 103.0
-offset_bottom = 31.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 
-[node name="Button" type="Button" parent="MenuBar" unique_id=1266728345]
+[node name="NewTestButton" type="Button" parent="MenuBar" unique_id=1266728345]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -43,6 +45,18 @@ offset_right = 80.0
 offset_bottom = 10.0
 grow_vertical = 2
 text = "New Test"
+
+[node name="Button2" type="Button" parent="MenuBar" unique_id=193386129]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -10.0
+offset_right = 160.0
+offset_bottom = 10.0
+grow_vertical = 2
+text = "Open Test"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1176618072]
 layout_mode = 1

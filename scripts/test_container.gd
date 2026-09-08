@@ -7,7 +7,6 @@ var slider : HSlider
 var save_button : Button
 var set_button : Button
 var check_button : Button
-var addquest_button : Button
 var questions : QuestionContainer
 
 func _ready():
@@ -95,7 +94,26 @@ func _on_save_button_pressed():
 	dialog.popup_centered_clamped()
 
 func _on_canceled():
-	pass
+	free_dialogs()
 
 func _on_ok():
+	var file_dialog = FileDialog.new()
+	file_dialog.file_mode = FileDialog.FileMode.FILE_MODE_SAVE_FILE
+	# file_dialog.current_dir = test_dir.?
+	# maybe we make some sort of TestDir global, so that all open tests
+	# and test directories are easily accessible once they're opened
+	file_dialog.access = FileDialog.Access.ACCESS_FILESYSTEM
+	var filter := "*.json, *.tres, *.test"
+	var description := "Test file"
+	var mime_type := "application/json, application/x-godot-resource, application/x-godot-resource"
+	file_dialog.add_filter(filter, description, mime_type)
+	add_child(file_dialog)
+	file_dialog.file_selected.connect(_on_file_selected)
+	file_dialog.popup_file_dialog()
+
+func _on_file_selected(path: String):
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	file.store_string("test" + str(randi()))
+
+func free_dialogs():
 	pass
