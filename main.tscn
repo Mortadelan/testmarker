@@ -46,14 +46,14 @@ offset_bottom = 10.0
 grow_vertical = 2
 text = "New Test"
 
-[node name="Button2" type="Button" parent="MenuBar" unique_id=193386129]
+[node name="OpenTestButton" type="Button" parent="MenuBar" unique_id=193386129]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 80.0
+offset_left = 82.0
 offset_top = -10.0
-offset_right = 160.0
+offset_right = 169.0
 offset_bottom = 10.0
 grow_vertical = 2
 text = "Open Test"

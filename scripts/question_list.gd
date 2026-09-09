@@ -13,11 +13,12 @@ func save() -> Dictionary:
 	var save_dict : Dictionary
 	if list.size() > 0:
 		for questioni in list.size():
-			var question : Dictionary = {
+			var question : Dictionary
+			question.assign({"question" + str(questioni + 1) : {
 				"correct" : list[questioni].correct,
 				"ease" : list[questioni].ease,
 				"discrim" : list[questioni].discrim
-				}
+				}})
 			save_dict.merge(question)
 		return save_dict
 	return Dictionary() # empty dict

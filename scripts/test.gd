@@ -9,9 +9,6 @@ func save() -> Dictionary:
 		"test_name": name,
 		# insert future score formulas here
 		"question_list_#": "1",
-		"question_list_1": lists[1].save()
+		"question_list_1": lists[0].save()
 		}
 	return save_dict
-
-func save_to_file(save_dict: Dictionary):
-	pass

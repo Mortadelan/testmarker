@@ -86,17 +86,6 @@ func _ready():
 		_ready()
 
 func _on_save_button_pressed():
-	var dialog = ConfirmationDialog.new()
-	dialog.get_cancel_button().pressed.connect(_on_canceled)
-	dialog.get_ok_button().pressed.connect(_on_ok)
-	dialog.dialog_text = "Are you sure you want to save this test?  This action cannot be undone"
-	add_child(dialog)
-	dialog.popup_centered_clamped()
-
-func _on_canceled():
-	free_dialogs()
-
-func _on_ok():
 	var file_dialog = FileDialog.new()
 	file_dialog.file_mode = FileDialog.FileMode.FILE_MODE_SAVE_FILE
 	# file_dialog.current_dir = test_dir.?
@@ -105,15 +94,30 @@ func _on_ok():
 	file_dialog.access = FileDialog.Access.ACCESS_FILESYSTEM
 	var filter := "*.json, *.tres, *.test"
 	var description := "Test file"
-	var mime_type := "application/json, application/x-godot-resource, application/x-godot-resource"
+	var mime_type := "application/json, application/x-godot-resource"
 	file_dialog.add_filter(filter, description, mime_type)
 	add_child(file_dialog)
 	file_dialog.file_selected.connect(_on_file_selected)
+	file_dialog.get_cancel_button().pressed.connect(_on_cancelled)
 	file_dialog.popup_file_dialog()
+
+func _on_cancelled():
+	print("Cancelled")
+	free_dialogs()
 
 func _on_file_selected(path: String):
 	var file = FileAccess.open(path, FileAccess.WRITE)
-	file.store_string("test" + str(randi()))
+	var save_dict = test.save()
+	var json_string = JSON.stringify(save_dict)
+	file.store_line(json_string)
+	free_dialogs()
 
 func free_dialogs():
+	# if list_children() contains ConfirmationDialog:
+	# children[ConfirmationDialog].free
+	# print("ConfirmationDialog freed")
+	# if list_children() contains FileDialog:
+	# children[FileDialog].free
+	# print("FileDialog freed")
+	print("Dialogs freed")
 	pass
